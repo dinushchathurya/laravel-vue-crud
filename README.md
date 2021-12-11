@@ -1,1 +1,1 @@
-## Laravel Vue.js CRUD 
+## Laravel Vue.js CRUD Example
