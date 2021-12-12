@@ -40,4 +40,12 @@ class ProductController extends Controller
         $product->update($request->all());  
         return response()->json('Product updated!');
     }
+
+    /* function to delete single product */
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return response()->json('Product deleted!');
+    }
 }
