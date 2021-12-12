@@ -13,4 +13,16 @@ class ProductController extends Controller
         $products = Product::all()->toArray();
         return array_reverse($products); 
     }
+
+    /* function to create new product */
+    public function store(Request $request)
+    {
+        $product = new Product([
+            'name' => $request->input('name'),
+            'detail' => $request->input('detail')
+        ]);
+        $product->save();
+
+        return response()->json('Product created!');
+    }
 }
