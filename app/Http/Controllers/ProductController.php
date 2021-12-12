@@ -32,4 +32,12 @@ class ProductController extends Controller
         $product = Product::find($id);
         return response()->json($product);
     }
+
+    /* function to update single product detail */
+    public function update($id, Request $request)
+    {
+        $product = Product::find($id);
+        $product->update($request->all());  
+        return response()->json('Product updated!');
+    }
 }
