@@ -25,4 +25,11 @@ class ProductController extends Controller
 
         return response()->json('Product created!');
     }
+
+    /* function to get single product detail */
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return response()->json($product);
+    }
 }
